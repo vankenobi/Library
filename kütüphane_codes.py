@@ -131,14 +131,15 @@ class MainApp(QMainWindow , ui):
             teslim_tarihi = self.tableWidget.item(i,7)
             teslim_tarihi = teslim_tarihi.text()
             id = self.tableWidget.item(i,0)
-            print(id)
+            
+            print(id.text())
             if bugun > teslim_tarihi:
                 self.tableWidget.setItem(i,3,QTableWidgetItem("Gecikti"))
                 print("gecikti")
             elif bugun == teslim_tarihi:
                 self.tableWidget.setItem(i,3,QTableWidgetItem("teslim günü"))
                 print("bugun getirmesi gerekir")
-                
+              
             else:
                 self.tableWidget.setItem(i,3,QTableWidgetItem("Süresi Var"))
                 print("Süresi var")
