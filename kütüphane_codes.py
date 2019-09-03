@@ -121,12 +121,7 @@ class MainApp(QMainWindow , ui):
         bugun = datetime.now()
         bugun= datetime.strftime(bugun,"%x")
 
-        self.connection = psycopg2.connect(user = "postgres",
-                                           password = "1234",
-                                           host = "localhost",
-                                           port = "5432",
-                                           database = "postgres")
-        self.cursor = self.connection.cursor()
+        
         for i in range(satir_sayisi-1):
             teslim_tarihi = self.tableWidget.item(i,7)
             teslim_tarihi = teslim_tarihi.text()
@@ -134,22 +129,44 @@ class MainApp(QMainWindow , ui):
             
             print(id.text())
             if bugun > teslim_tarihi:
+                self.connection = psycopg2.connect(user = "postgres",
+                                           password = "1234",
+                                           host = "localhost",
+                                           port = "5432",
+                                           database = "postgres")
+                self.cursor = self.connection.cursor()
                 self.tableWidget.setItem(i,3,QTableWidgetItem("Gecikti"))
                 self.cursor.execute("""UPDATE  islemler SET kitap_durum = 'Gecikti' WHERE id =%s""",[(int(id.text()))])
                 self.connection.commit()
-                print("gecikti")
+                self.connection.close()
+              
 
             elif bugun == teslim_tarihi:
+                self.connection = psycopg2.connect(user = "postgres",
+                                           password = "1234",
+                                           host = "localhost",
+                                           port = "5432",
+                                           database = "postgres")
+                self.cursor = self.connection.cursor()
                 self.tableWidget.setItem(i,3,QTableWidgetItem("teslim günü"))
                 self.cursor.execute("""UPDATE  islemler SET kitap_durum = 'teslim günü' WHERE id=%s""",[(int(id.text()))])
                 self.connection.commit()
-                print("bugun getirmesi gerekir")
+                self.connection.close()
+              
               
             else:
+                self.connection = psycopg2.connect(user = "postgres",
+                                           password = "1234",
+                                           host = "localhost",
+                                           port = "5432",
+                                           database = "postgres")
+                self.cursor = self.connection.cursor()
                 self.tableWidget.setItem(i,3,QTableWidgetItem("Süresi Var"))
                 self.cursor.execute("""UPDATE  islemler SET kitap_durum = 'Bekleniyor' WHERE id=%s""",[(int(id.text()))])
                 self.connection.commit()
-                print("Süresi var")
+                self.connection.close()
+            
+        
             self.connection.close()     
     def Barkod_Oku(self):
         def barcodeReader(image, bgr):
