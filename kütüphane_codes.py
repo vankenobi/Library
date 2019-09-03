@@ -135,15 +135,22 @@ class MainApp(QMainWindow , ui):
             print(id.text())
             if bugun > teslim_tarihi:
                 self.tableWidget.setItem(i,3,QTableWidgetItem("Gecikti"))
+                self.cursor.execute("""UPDATE  islemler SET kitap_durum = 'Gecikti' WHERE id =%s""",[(int(id.text()))])
+                self.connection.commit()
                 print("gecikti")
+
             elif bugun == teslim_tarihi:
                 self.tableWidget.setItem(i,3,QTableWidgetItem("teslim günü"))
+                self.cursor.execute("""UPDATE  islemler SET kitap_durum = 'teslim günü' WHERE id=%s""",[(int(id.text()))])
+                self.connection.commit()
                 print("bugun getirmesi gerekir")
               
             else:
                 self.tableWidget.setItem(i,3,QTableWidgetItem("Süresi Var"))
+                self.cursor.execute("""UPDATE  islemler SET kitap_durum = 'Bekleniyor' WHERE id=%s""",[(int(id.text()))])
+                self.connection.commit()
                 print("Süresi var")
-                     
+            self.connection.close()     
     def Barkod_Oku(self):
         def barcodeReader(image, bgr):
             
