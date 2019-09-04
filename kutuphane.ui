@@ -170,7 +170,7 @@
      </rect>
     </property>
     <property name="currentIndex">
-     <number>3</number>
+     <number>1</number>
     </property>
     <widget class="QWidget" name="tab_4">
      <attribute name="title">
@@ -698,7 +698,7 @@
        </rect>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>2</number>
       </property>
       <widget class="QWidget" name="tab_7">
        <attribute name="title">
@@ -925,7 +925,7 @@
         <property name="geometry">
          <rect>
           <x>390</x>
-          <y>30</y>
+          <y>10</y>
           <width>101</width>
           <height>31</height>
          </rect>
@@ -975,9 +975,9 @@
         <property name="geometry">
          <rect>
           <x>390</x>
-          <y>70</y>
+          <y>40</y>
           <width>351</width>
-          <height>311</height>
+          <height>331</height>
          </rect>
         </property>
        </widget>
@@ -1202,9 +1202,9 @@
         <property name="geometry">
          <rect>
           <x>420</x>
-          <y>380</y>
+          <y>400</y>
           <width>361</width>
-          <height>71</height>
+          <height>41</height>
          </rect>
         </property>
         <property name="font">
@@ -1480,7 +1480,7 @@
         <property name="geometry">
          <rect>
           <x>80</x>
-          <y>410</y>
+          <y>400</y>
           <width>291</width>
           <height>41</height>
          </rect>
@@ -1502,7 +1502,7 @@
           <x>420</x>
           <y>130</y>
           <width>361</width>
-          <height>231</height>
+          <height>251</height>
          </rect>
         </property>
        </widget>

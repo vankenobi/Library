@@ -8,7 +8,7 @@ from datetime import datetime
 from datetime import timedelta
 
 from xlrd import *
-from xlsxwriter import *
+from xlsxwriter import *    
 
 import time
 from pyzbar.pyzbar import decode
@@ -47,7 +47,7 @@ class Login(QWidget,login):
                 self.window2.show()
                 
             else:
-                self.label_2.setText("Hatalı Giriş")
+                self.label_2.setText("Hatalı Giriş")    
     
                 
         
