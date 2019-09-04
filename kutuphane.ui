@@ -170,7 +170,7 @@
      </rect>
     </property>
     <property name="currentIndex">
-     <number>1</number>
+     <number>2</number>
     </property>
     <widget class="QWidget" name="tab_4">
      <attribute name="title">
@@ -698,7 +698,7 @@
        </rect>
       </property>
       <property name="currentIndex">
-       <number>2</number>
+       <number>1</number>
       </property>
       <widget class="QWidget" name="tab_7">
        <attribute name="title">
@@ -1578,7 +1578,7 @@
         <bool>true</bool>
        </property>
        <property name="inputMask">
-        <string/>
+        <string>99999999999</string>
        </property>
        <property name="maxLength">
         <number>11</number>
@@ -1888,7 +1888,7 @@
         </rect>
        </property>
        <property name="inputMask">
-        <string/>
+        <string>99999999999</string>
        </property>
        <property name="maxLength">
         <number>11</number>
@@ -2056,7 +2056,7 @@
         </rect>
        </property>
        <property name="inputMask">
-        <string/>
+        <string>99999999999</string>
        </property>
        <property name="maxLength">
         <number>11</number>
@@ -2399,7 +2399,7 @@
     </property>
     <property name="geometry">
      <rect>
-      <x>640</x>
+      <x>810</x>
       <y>0</y>
       <width>371</width>
       <height>631</height>
