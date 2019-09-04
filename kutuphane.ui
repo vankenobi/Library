@@ -1578,10 +1578,10 @@
         <bool>true</bool>
        </property>
        <property name="inputMask">
-        <string>99999999999</string>
+        <string/>
        </property>
        <property name="maxLength">
-        <number>11</number>
+        <number>32767</number>
        </property>
       </widget>
       <widget class="QLineEdit" name="lineEdit_22">
@@ -1888,10 +1888,10 @@
         </rect>
        </property>
        <property name="inputMask">
-        <string>99999999999</string>
+        <string/>
        </property>
        <property name="maxLength">
-        <number>11</number>
+        <number>32767</number>
        </property>
       </widget>
       <widget class="QPushButton" name="pushButton_16">
@@ -2056,10 +2056,10 @@
         </rect>
        </property>
        <property name="inputMask">
-        <string>99999999999</string>
+        <string/>
        </property>
        <property name="maxLength">
-        <number>11</number>
+        <number>32767</number>
        </property>
       </widget>
       <widget class="QLineEdit" name="lineEdit_38">
@@ -2399,7 +2399,7 @@
     </property>
     <property name="geometry">
      <rect>
-      <x>810</x>
+      <x>210</x>
       <y>0</y>
       <width>371</width>
       <height>631</height>

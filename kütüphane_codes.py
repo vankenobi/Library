@@ -551,7 +551,7 @@ class MainApp(QMainWindow , ui):
         ogrenci_email = self.lineEdit_22.text()
         ogrenci_tel = self.lineEdit_23.text()
         
-        if len(ogrenci_tc) > 0 and len(ogrenci_adi) > 0 and len(ogrenci_soyadi) > 0:
+        if len(ogrenci_tc) == 11 and len(ogrenci_adi) > 0 and len(ogrenci_soyadi) > 0:
             
             try:
                 
@@ -581,7 +581,7 @@ class MainApp(QMainWindow , ui):
                 self.lineEdit_22.setText("")
                 self.lineEdit_23.setText("")
         else:
-            QMessageBox.warning(self,"Uyarı","Lütfen zorunlu alanları doldurunuz.")
+            QMessageBox.warning(self,"Uyarı","-Lütfen zorunlu alanları doldurunuz.\n -Kimlik numarası 11 haneli olmak zorundadır.")
 
 
     def Login(self):
