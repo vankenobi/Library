@@ -3,8 +3,9 @@ from PyQt5.QtGui import *
 from PyQt5.QtWidgets import *
 from PyQt5.uic import loadUiType
 
-from login import Ui_Form
-from kutuphane import Ui_MainWindow
+ui,_ = loadUiType('kutuphane.ui')
+
+login,_ = loadUiType('login.ui')
 
 import psycopg2
 
@@ -23,7 +24,7 @@ import sys
 
 
 
-class Login(QWidget,Ui_Form):
+class Login(QWidget,login):
     def __init__(self):
         QWidget.__init__(self)
         self.setupUi(self)
@@ -55,7 +56,7 @@ class Login(QWidget,Ui_Form):
                 
         
 
-class MainApp(QMainWindow , Ui_MainWindow):
+class MainApp(QMainWindow , ui):
     def __init__(self):
         QMainWindow.__init__(self)
         self.setupUi(self)
@@ -713,7 +714,7 @@ class MainApp(QMainWindow , Ui_MainWindow):
                                            port = "5432",
                                            database = "postgres")
         self.cursor = self.connection.cursor()
-        self.cursor.execute("""DELETE FROM yayinevi WHERE yayınevi=%s""",[yayinevi])
+        self.cursor.execute("""DELETE FROM yayinevi WHERE yayinevi=%s""",[yayinevi])
         self.connection.commit()
         self.connection.close()
         self.Show_Publisher()
