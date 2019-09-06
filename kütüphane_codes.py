@@ -2,6 +2,10 @@ from PyQt5.QtCore import *
 from PyQt5.QtGui import *
 from PyQt5.QtWidgets import *
 from PyQt5.uic import loadUiType
+
+from login import Ui_Form
+from kutuphane import Ui_MainWindow
+
 import psycopg2
 
 from datetime import datetime
@@ -17,10 +21,9 @@ import numpy as np
 
 import sys 
 
-ui,_ = loadUiType('kutuphane.ui')
-login,_ = loadUiType('login.ui')
 
-class Login(QWidget,login):
+
+class Login(QWidget,Ui_Form):
     def __init__(self):
         QWidget.__init__(self)
         self.setupUi(self)
@@ -52,7 +55,7 @@ class Login(QWidget,login):
                 
         
 
-class MainApp(QMainWindow , ui):
+class MainApp(QMainWindow , Ui_MainWindow):
     def __init__(self):
         QMainWindow.__init__(self)
         self.setupUi(self)
@@ -199,7 +202,6 @@ class MainApp(QMainWindow , ui):
             cv2.imshow('Barcode reader', frame)
             if barcode is not None:
                 self.lineEdit_4.setText(barcode)
-                print("\a")
                 break
             code = cv2.waitKey(10)
             if code == ord('q') :
@@ -729,6 +731,7 @@ class MainApp(QMainWindow , ui):
             self.connection.commit()
             self.Show_Category()
             self.Show_Category_Combobox()
+            QMessageBox.about(self,"Bilgilendirme","Yeni kategori eklendi.")
         except psycopg2.errors.UniqueViolation:
             QMessageBox.warning(self,"Uyarı","Böyle bir kategori zaten mevcut.")
     def Show_Category(self):
@@ -767,6 +770,7 @@ class MainApp(QMainWindow , ui):
             self.connection.commit()
             self.Show_Author()
             self.Show_Author_Combobox()
+            QMessageBox.about(self,"Bilgilendirme","Yeni yazar eklendi.")
         except psycopg2.errors.UniqueViolation:
             QMessageBox.warning(self,"Uyarı","Böyle bir yazar zaten mevcut.")
     def Show_Author(self):
@@ -803,6 +807,7 @@ class MainApp(QMainWindow , ui):
             self.connection.commit()
             self.Show_Publisher()
             self.Show_Publisher_Combobox()
+            QMessageBox.about(self,"Bilgilendirme","Yeni yayınevi eklendi.")
         except psycopg2.errors.UniqueViolation:
             QMessageBox.warning(self,"Uyarı","Böyle bir yayınevi zaten mevcut.")
 
