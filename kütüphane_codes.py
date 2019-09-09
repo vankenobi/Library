@@ -336,7 +336,6 @@ class MainApp(QMainWindow , ui):
                 ON islemler.kitap_isbn = kitaplar.isbn
                     INNER JOIN  ogrenciler
                 ON ogrenciler.ogrenci_tc = islemler.ogrenci_tc"""
-
         self.cursor.execute(sql)
         data = self.cursor.fetchall()
         
