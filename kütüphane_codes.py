@@ -23,8 +23,6 @@ import numpy as np
 
 import sys 
 
-
-
 class Login(QWidget,login):
     def __init__(self):
         QWidget.__init__(self)
@@ -95,6 +93,7 @@ class MainApp(QMainWindow , ui):
         self.pushButton_13.clicked.connect(self.Search_Books)
         self.pushButton_9.clicked.connect(self.Edit_Books)
         self.pushButton_14.clicked.connect(self.Delete_Books)
+        self.pushButton_32.clicked.connect(self.Show_All_Books)
 
         self.pushButton_20.clicked.connect(self.Add_Category)
         self.pushButton_19.clicked.connect(self.Add_Author)
