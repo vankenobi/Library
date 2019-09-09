@@ -89,7 +89,7 @@ class MainApp(QMainWindow , ui):
         self.pushButton_3.clicked.connect(self.Open_Users_Tab)
         self.pushButton_4.clicked.connect(self.Open_Settings_Tab)
 
-        self.pushButton_8.clicked.connect(self.Add_New_Book)
+        self.pushButton_8.clicked.connect(self.Add_New_Book)    
         self.pushButton_13.clicked.connect(self.Search_Books)
         self.pushButton_9.clicked.connect(self.Edit_Books)
         self.pushButton_14.clicked.connect(self.Delete_Books)
